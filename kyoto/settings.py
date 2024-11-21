@@ -146,3 +146,5 @@ CACHES = {
     }
 }
 
+
+CSRF_TRUSTED_ORIGINS = ['https://nanasoloveyva-kyoto-c422.twc1.net/']
