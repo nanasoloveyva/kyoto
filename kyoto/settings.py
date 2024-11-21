@@ -147,4 +147,7 @@ CACHES = {
 }
 
 
-CSRF_TRUSTED_ORIGINS = ['https://nanasoloveyva-kyoto-c422.twc1.net/']
+CSRF_TRUSTED_ORIGINS = [
+    'https://nanasoloveyva-kyoto-c422.twc1.net',
+    'http://nanasoloveyva-kyoto-c422.twc1.net'
+]
