@@ -27,7 +27,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('authentication/', LoginUser.as_view(), name='authentication'),
     path('logout/', logout_user, name='logout'),
-    path('profile/', ProfileUser.as_view(), name='profile'),
+    path('profile/', views.profile_view, name='profile'),
 
     # Blog and posts
     path('blog/', views.blog, name='blog'),
