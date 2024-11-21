@@ -105,7 +105,7 @@ class Comment(models.Model):
     
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     avatar = models.CharField(max_length=200, default='main/images/default.png')
 
     def __str__(self):
