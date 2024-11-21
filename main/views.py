@@ -137,34 +137,34 @@ def logout_user(request):
     return redirect('authentication')
 
 # Профиль пользователя
-def profile_view(request):
-    user = request.user
-    profile, created = Profile.objects.get_or_create(user=user)
-    
-    if request.method == 'POST':
-        user_form = UserUpdateForm(request.POST, instance=user)
-        profile_form = ProfileUsersForm(request.POST, request.FILES, instance=profile)
-        selected_avatar = request.POST.get('selected_avatar')
-        
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile = profile_form.save()
-            if selected_avatar:
-                profile.avatar = selected_avatar
-                profile.save()
-            return redirect('profile')
-    else:
-        user_form = UserUpdateForm(instance=user)
-        profile_form = ProfileUsersForm(instance=profile)
-    
-    context = {
-        'user_form': user_form,
-        'profile_form': profile_form,
-        'title': 'Профиль пользователя',
-        'current_avatar': user.profile.avatar if hasattr(user, 'profile') else None
-    }
-    
-    return render(request, 'main/profile.html', context)
+class ProfileUser(LoginRequiredMixin, UpdateView):
+    model = User
+    form_class = ProfileUsersForm
+    template_name = 'main/profile.html'
+   
+    def get_object(self):
+        return self.request.user
+   
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        selected_avatar = self.request.POST.get('selected_avatar')
+        profile, created = Profile.objects.get_or_create(user=self.request.user)
+        if selected_avatar:
+            profile.avatar = selected_avatar
+            profile.save()
+        return response
+   
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Профиль пользователя'
+        try:
+            context['current_avatar'] = self.request.user.profile.avatar
+        except Profile.DoesNotExist:
+            context['current_avatar'] = None
+        return context
+   
+    def get_success_url(self):
+        return reverse_lazy('profile')
 
 # Управление комментариями
 @login_required
@@ -239,3 +239,4 @@ def reply_to_comment(request, comment_id):
     return JsonResponse({'success': False})
 
 
+    
