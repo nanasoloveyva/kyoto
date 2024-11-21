@@ -1,0 +1,1118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+	
+body, html {
+	background-color: #fafafa;
+	overflow-x: hidden;}
+
+body {
+	margin: 0;
+	background-color: #fafafa;
+}
+
+	
+/* ------------------------ СТИЛЬ ДЛЯ БАННЕРА ------------------------  */
+
+.banner {
+    margin-top: -15px;
+    padding-top: 79px;
+}
+
+.banner-image {
+    height: 630px;
+    background: center/cover no-repeat;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+}
+	
+/* ------------------------ СТИЛЬ ДЛЯ ПОДВАЛА ------------------------  */	
+	
+.footer_container {
+    background-image: url("../images/futer_2.png");
+    width: 100%;
+    height: 293px;
+}
+	
+.email-form {
+	position: relative;
+	top: -90px;
+	left: 50%;
+	transform: translateX(-50%);}
+	
+.button-email {
+	background-color: #c1e280;
+	height: 40px;
+	width: 130px;
+	border-radius: 4px;
+	border-width: 0;
+	cursor: pointer;
+	box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+	box-sizing: border-box;
+	font-family: inherit;
+	text-align: center;
+	transition: 0.4s;}
+	
+.button-email:hover {
+		box-shadow: 7px 5px 56px -14px #C3D900;
+		transition: 0.4s;
+	}
+	
+.button-email:active {
+	transform: scale(0.97);
+	box-shadow: 7px 5px 56px -10px #C3D900;
+	transition: 0.4s;}
+	
+.corner-image {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;}
+	
+.link-underline {
+	background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+	background-position: 30% 100%;
+	background-repeat: repeat-x;
+	background-size: 3px 3px;
+	color: #000;
+	text-decoration: none;}
+	
+.link-underline:hover {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+	background-position: 30% 100%;
+	background-size: auto 4px;
+	background-repeat: repeat-x;
+	width: fit-content;
+	color: #ff9800;}
+	
+.link-underline {
+	text-decoration: none;
+	transition: color 0.3s ease;}
+	
+.link-underline:hover,
+.link-underline:focus,
+.link-underline:active {
+		color: #ff9800 !important;}
+	
+
+
+/* ------------------------ СТИЛЬ ДЛЯ СЕКЦИИ ИСТОРИЯ О НАС ------------------------  */
+
+.u-clearfix.u-sheet.u-sheet-1 {
+    height: 710px; 
+    background-color: #fafafa;
+    padding-top: 10px;
+
+}
+
+.u-section-1 .u-group-1 {
+    width: 705px;
+    min-height: 400px;
+    margin: 110px auto 0 201px;
+}
+	
+.u-section-1 .u-text-1 {
+	font-size: 50px;
+	font-weight: 700;
+	margin: 17px 45px 0 9px;
+	margin-bottom: 17px;
+	color: #8dc740;
+}
+	
+.u-section-1 .u-text-3 {
+	font-size: 0.875rem;
+	margin: 0 30px 0 10px; 
+}
+
+.link-about-us {
+	font-size: 0.875rem;
+	margin: 30px 0 10px;
+	padding-top: 20px;
+}
+	
+.u-section-1 .u-text-4 {
+	position: absolute;
+	font-size: 9px;
+	margin: 42px 0 0 545px; 
+	width: 300px; 
+}
+
+.link-about-us{
+	width: 300px; 
+	height: 10px;
+
+	box-sizing: border-box;
+	position: absolute; 
+
+	bottom: -245px;
+	left: 210px;
+	
+}
+
+.link-about-us a {
+	font-size: 0.875rem;
+	font-family: "Ysabeau", sans-serif;
+	font-weight: 600;
+	font-size: 17px;
+	text-decoration: none; 
+}	
+
+
+.link-about-us a {
+	background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+	background-position: 30% 100%;
+	background-repeat: repeat-x;
+	background-size: 3px 3px;
+	color: #8dc740;
+	text-decoration: none;
+}
+
+.link-about-us:hover a {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+	background-position: 30% 100%;
+	background-size: auto 4px;
+	background-repeat: repeat-x;
+	width: fit-content;
+	color: #ff9800;
+}
+
+.link-about-us a {
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.link-about-us:hover,
+.link-about-us:focus,
+.link-about-us:active a {
+	color: #ff9800 !important;
+}
+
+
+
+/* ------------------------ СТИЛЬ ДЛЯ КАРУСЕЛИ ------------------------  */	
+
+.slideshow-container {
+    max-width: 670px;
+    width: 60%;
+    position: relative;
+    margin: auto;
+    transform: translate(400px, -408px);
+    border-radius: 7px; 
+}
+
+.mySlides {
+    display: none;
+    background-color: black;
+    border-radius: 7px; 
+}
+
+.mySlides img {
+    border-radius: 7px; 
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 7px; 
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 7px; 
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 7px; 
+}
+
+.dot-container {
+    text-align: center;
+    transform: translate(400px, -430px); 
+    margin-top: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 7px;
+    width: 7px;
+    margin: 0 2px;
+    background-color: #c1e280;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #a7c767;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: .4; }
+    to { opacity: 1; }
+}
+
+.nadpis {
+    position: absolute;
+    top: 1090px; 
+    left: 590px; 
+    width: 14%; 
+    pointer-events: none; 
+	transform: rotate(-5deg); 
+}
+
+.corner-image2 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 1000;
+}
+
+/*  ------------- СТИЛЬ СКРОЛЛБАРА ------------- */
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #c1e280;
+}
+  
+
+::-webkit-scrollbar-thumb:hover {
+	background: #a7c767;
+}
+
+
+/* ------------------ СТИЛЬ О НАС  ------------------ */
+
+.about-section_container {
+    background-image: url("../images/fon-content.png");
+    height: 650px; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-section-content {
+    padding: 20px;
+    width: 1693px;
+    height: 450px; 
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.about-section-list {
+    box-sizing: border-box;
+    width: 148px;
+    height: 233px;
+    position: absolute;
+    top: -30px;
+    left: 560px;
+    z-index: 1000;
+}
+
+.about-section-list img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 400;
+    font-size: 30px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    z-index: 1100; 
+	white-space: nowrap;
+}
+
+/* внутри about-section-content  */
+
+.about-section-content-block {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 68px;
+	padding-right: 68px;
+	box-sizing: border-box;
+	position: absolute; 
+	width: 1650px; 
+	height: 507px;
+}
+
+.about-box1 {
+	top: 0;
+	left: 20px;
+
+	width: 366px; 
+	height: 507px;
+	box-sizing: border-box;
+	position: absolute; 
+
+}
+
+.about-box2 {
+	top: 0;
+	width: 370px; 
+	height: 507px;
+
+	left: 640px;
+	box-sizing: border-box;
+	position: absolute; 
+}
+
+.about-box3 {
+	top: 0;
+	width: 363px;
+	height: 507px;
+
+    left: 1200px;
+	box-sizing: border-box;
+	position: absolute; 
+}
+
+
+/* -------Внутри .about-box-------- */
+
+.about-pic1 {
+    background-image: url("../images/about1.png");
+	top: 0;
+	width: 366px; 
+	height: 318px;
+
+	box-sizing: border-box;
+	position: absolute; 
+	border-radius: 7px; 
+
+}
+
+.about-pic2 {
+    background-image: url("../images/about2.png");
+	top: 0;
+	width: 370px; 
+	height: 318px;
+
+	box-sizing: border-box;
+	position: absolute; 
+	border-radius: 7px; 
+
+}
+
+.about-pic3 {
+    background-image: url("../images/about3.png");
+	top: 0;
+	width: 370px; 
+	height: 318px;
+
+	box-sizing: border-box;
+	position: absolute; 
+	border-radius: 7px; 
+
+}
+
+.about-text1 {
+	bottom: 0;
+	width: 370px; 
+	height: 180px;
+
+	box-sizing: border-box;
+	position: absolute; 
+
+}
+
+.about-text2 {
+	bottom: 0;
+	width: 375px; 
+	height: 180px;
+
+	box-sizing: border-box;
+	position: absolute; 
+
+}
+
+.about-text3 {
+	bottom: 0;
+	width: 380px; 
+	height: 180px;
+
+	box-sizing: border-box;
+	position: absolute; 
+
+}
+
+
+.about-text1-1 {
+	width: 366px; 
+	height: 116px;
+	bottom: 5px;
+	top: 5px;
+	left: -10px;
+
+	box-sizing: border-box;
+	position: absolute; 
+
+	font-optical-sizing: auto;
+	font-weight: 200;
+
+	text-align: justify; 
+    padding: 0 10px; 
+}
+
+
+.about-text2-2 {
+
+	width: 370px;
+	height: 116px;
+	bottom: 5px;
+	top: 5px;
+	left: -10px;
+
+	box-sizing: border-box;
+	position: absolute; 
+
+	font-optical-sizing: auto;
+	font-weight: 200;
+
+	text-align: justify; 
+    padding: 0 10px; 
+}
+
+.about-text3-3 {
+
+	width: 370px; 
+	height: 116px;
+	bottom: 5px;
+	top: 5px;
+	left: -10px;
+
+	box-sizing: border-box;
+	position: absolute; 
+
+	font-optical-sizing: auto;
+	font-weight: 200;
+
+	text-align: justify; 
+    padding: 0 10px;
+}
+
+
+
+.text-about-japan1 {
+    width: 162px;
+    height: 63px;
+    box-sizing: border-box;
+    position: fixed; 
+    top: 325px; 
+    left: 410px; 
+    transform: translate(-50%, -50%); 
+    z-index: 1001; 
+
+	font-family: "Noto Serif JP", serif;
+    font-weight: 300;
+    font-size: 80px;
+
+	display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.text-about-japan2 {
+    width: 162px;
+    height: 63px;
+    box-sizing: border-box;
+    position: fixed; 
+    top: 325px; 
+    left: 1036px; 
+    transform: translate(-50%, -50%); 
+    z-index: 1001; 
+
+	font-family: "Noto Serif JP", serif;
+    font-weight: 300;
+    font-size: 90px;
+	white-space: nowrap;
+
+	display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.text-about-japan3 {
+    width: 162px;
+    height: 63px;
+    box-sizing: border-box;
+    position: fixed; 
+    top: 325px;
+    left: 1600px; 
+    transform: translate(-50%, -50%); 
+    z-index: 1001;
+
+	font-family: "Noto Serif JP", serif;
+    font-weight: 300;
+    font-size: 80px;
+
+	display: flex;
+    align-items: center; 
+    justify-content: center; 
+
+}
+
+.text-about-japan1 p {
+    color: #8ff77b;
+}
+
+.text-about-japan2 p {
+    color: #8ff77b;
+}
+
+.text-about-japan3 p {
+    color: #8ff77b;
+}
+
+.link-underline-about a {
+	background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+	background-position: 30% 100%;
+	background-repeat: repeat-x;
+	background-size: 3px 3px;
+	color: #000;
+	text-decoration: none;
+}
+
+.link-underline-about:hover a {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+	background-position: 30% 100%;
+	background-size: auto 4px;
+	background-repeat: repeat-x;
+	width: fit-content;
+	color: #ff9800;
+}
+
+.link-underline-about a {
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.link-underline-about:hover,
+.link-underline-about:focus,
+.link-underline-about:active a {
+	color: #ff9800 !important;
+}
+
+/* ------------- СТИЛЬ ПРО ЧАЙ ------------- */
+
+.chai {
+    width: 100%;
+    height: 1100px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	padding-top: 100px;
+}
+
+.chai-conteiner {
+	width: 100%;
+    height: 900px; 
+	position: relative;
+}
+
+
+.chai-conteiner-text-about {
+    width: 1088px;
+    height: 147px;
+
+    box-sizing: border-box;
+    position: relative; 
+
+	top: -45px;
+    margin-left: 130px; /* Смещение вправо на 130px */
+}
+
+.chai-main-text {
+	width: 787px;
+	height: 80px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	top: -35px; 
+	left: 40px; /* Привязка к правому краю */
+	z-index: 2;
+
+}
+
+.chai-main-text p {
+	font-size: 63px;
+	font-weight: 700;
+	color: #8dc740;
+	white-space: nowrap;
+
+}
+
+.chai-text-japan {
+	width: 787px;
+	height: 80px;
+
+	font-family: "Noto Serif JP", serif;
+    font-weight: 100;
+    font-size: 70px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	top: -50px; 
+	left: 470px; 
+	z-index: 1; 
+}
+
+.chai-text-japan p {
+	color: #ebffbe;
+}
+
+.chai-nomain-text {
+	width: 1350px;	
+	height: 70px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	bottom: 20px; /* Привязка к нижнему краю */
+	left: 44px; /* Привязка к правому краю */
+}
+
+
+
+
+
+.chai-conteiner-chai1 {
+
+	width: 1857px;
+	height: 290px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	left: 0; /* Привязка к левому краю */
+	top: 180px; /* Привязка к верхнему краю */
+
+}
+
+
+
+.chai-conteiner-chai2 {
+
+	width: 1857px;
+	height: 290px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	right: 0; /* Привязка к левому краю */
+	bottom: 50px; /* Привязка к верхнему краю */
+
+}
+
+.chai-photo1 {
+    background-image: url("../images/chai-photo2.png");
+	width: 830px;
+	height: 290px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	left: 0; /* Привязка к левому краю */
+
+	border-radius: 0px 100px 4px 4px ;
+}
+
+.chai-photo2 {
+    background-image: url("../images/chai-photo1.png");
+	width: 830px;
+	height: 290px;
+
+	box-sizing: border-box;
+	position: absolute;
+	
+	right: 0; /* Привязка к правому краю */
+
+	border-radius: 100px 4px 4px 4px ;
+}
+
+
+.chai-main-text11 {
+
+	width: 947px;
+	height: 245px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	top: 10px;
+	left: 850px;
+
+
+}
+
+.chai-main-text22 {
+
+	width: 947px;
+	height: 245px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	top: 10px;
+	left: 60px;
+}
+
+/* ЗАГОЛОВОК ЧАЯ */
+
+.chai-zagolovok1 {
+	width: 600px;
+	height: 75px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	top: 0px;
+	left: 0;
+}
+
+.chai-zagolovok1 p {
+	font-family: "Noto Serif JP", serif;
+    font-weight: 300;
+    font-size: 45px;
+}
+
+.chai-zagolovok2 {
+	width: 700px;
+	height: 75px;
+
+	box-sizing: border-box;
+	position: absolute;
+	
+	top: 0px;
+	right: 0;
+
+	text-align: right;
+}
+
+.chai-zagolovok2 p {
+	font-family: "Noto Serif JP", serif;
+    font-weight: 300;
+    font-size: 45px;
+}
+
+/* текст ЧАЯ */
+
+.chai-text-about1 {
+	width: 850px;
+	height: 160px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	bottom: 0px;
+	left: 0;
+}
+
+.chai-text-about1 p {
+	text-align: justify;
+
+}
+
+.chai-text-about2 {
+	width: 850px;
+	height: 160px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	bottom: 0px;
+	right: 0;
+
+	text-align: right;
+}
+
+.chai-text-about2 p {
+	text-align: justify;
+}
+
+
+/* ------------- СТИЛЬ ПРО ЧАЙ ------------- */
+
+.chai-textlink1 {
+	width: 450px;
+	height: 36px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	bottom: 20px;
+	left: 849px;
+}
+
+
+
+.chai-textlink1 a {
+	background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+	background-position: 30% 100%;
+	background-repeat: repeat-x;
+	background-size: 3px 3px;
+	color: #8dc740;
+	text-decoration: none;
+}
+
+.chai-textlink1:hover a {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+	background-position: 30% 100%;
+	background-size: auto 4px;
+	background-repeat: repeat-x;
+	width: fit-content;
+	color: #ff9800;
+}
+
+.chai-textlink1 a {
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.chai-textlink1:hover,
+.chai-textlink1:focus,
+.chai-textlink1:active a {
+	color: #ff9800 !important;
+}
+
+
+
+
+.chai-textlink2 {
+	width: 450px;
+	height: 36px;
+
+	box-sizing: border-box;
+	position: absolute;
+
+	bottom: 20px;
+	right: 850px;
+
+	text-align: right;
+}
+
+
+.chai-textlink2 a {
+	background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+	background-position: 30% 100%;
+	background-repeat: repeat-x;
+	background-size: 3px 3px;
+	color: #8dc740;
+	text-decoration: none;
+}
+
+.chai-textlink2:hover a {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+	background-position: 30% 100%;
+	background-size: auto 4px;
+	background-repeat: repeat-x;
+	width: fit-content;
+	color: #ff9800;
+}
+
+.chai-textlink2 a {
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.chai-textlink2:hover,
+.chai-textlink2:focus,
+.chai-textlink2:active a {
+	color: #ff9800 !important;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.menu-avatar-default {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #70a981;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.menu-avatar-default {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #70a981;
+}
+
+
+/* ---------------------------- БЛОК БЛОГОВ ---------------------------- */
+
+
+.blog-conteinter {
+    background-image: url("../images/fon-content.png");
+    width: 100%;
+    height: 850px;
+    padding: 50px 0;
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.blog-header h2 {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 300;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.blog-subtitle {
+    font-family: "Noto Serif JP", serif;
+    font-size: 18px;
+    color: #666;
+}
+
+.blog-posts {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.blog-post {
+    flex: 1;
+    max-width: 350px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+}
+
+.post-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post-date {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.post-title a {
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Noto Serif JP", serif;
+}
+
+.post-title a:hover {
+    color: #579d4f;
+}
+
+.post-preview {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.blog-footer {
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    color: #333;
+    text-decoration: none;
+    font-family: "Ysabeau", sans-serif;
+    transition: all 0.3s ease;
+    background-color: white;
+	border-radius: 7px;
+}
+
+.read-more:hover {
+    background: #C1E280;
+    color: #333;
+}
+
+.about-pic1, .about-pic2, .about-pic3 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-pic1:hover, .about-pic2:hover, .about-pic3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}

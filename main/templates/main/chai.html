@@ -1,0 +1,1388 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша коллекция чая | KYOTOCHAI</title>
+	{% comment %} <link type="text/css" href="{% static 'main/css/styles.css' %}" rel="stylesheet"/>  {% endcomment %}
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+
+    <!-- google font -->
+	<link href="https://fonts.cdnfonts.com/css/codec-pro" rel="stylesheet">
+
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
+
+	<!-- bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="{% static 'main/images/icon.png' %}">
+	
+<style>
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		background-color: #fafafa;
+	}
+		
+	body, html {
+		overflow-x: hidden;
+	}
+
+
+	.navbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20px;
+		background-color: #fff;
+		border-bottom: 1px solid #ddd;
+		font-family: "Ysabeau", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 200;
+		margin-bottom: 0;
+		
+		position: fixed; 
+		top: 0; 
+		width: 100%;
+		z-index: 1000; 
+	}
+		
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		border: 1px solid #333;
+		padding: 5px 10px;
+		margin-right: 20px;
+		margin-left: 50px;
+		height: 38px;
+	}
+		
+	.logo .logo-divider {
+		border-left: 1px solid #333;
+		height: 120%;
+	}
+		
+	.logo .english {
+		font-size: 18px;
+		font-weight: 200;
+		text-decoration: none;
+	}
+		
+	.logo .japanese {
+		font-family: "Noto Serif JP", serif;
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-size: 18px;
+		text-decoration: none;
+	}
+
+	.logo a {
+		text-decoration: none; 
+		color: black;
+	}
+
+	.logo:hover a {
+		color: #579d4f;
+	}
+		
+	.menu {
+		display: flex;
+		border: 1px solid #333;
+		padding: 0;
+		max-width: 90%;
+		margin-left: auto;
+		margin-right: 80px;
+		height: 38px;
+	}
+		
+	.menu-item {
+		text-decoration: none;
+		color: #333;
+		font-size: 14px;
+		padding: 10px 20px;
+		font-weight: 300;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+		border-left: 1px solid #333;
+		white-space: nowrap;
+		height: 100%;
+	}
+		
+	.menu-item:first-child {
+		border-left: none;
+	}
+		
+	.menu-item:hover {
+		background-color: #C1E280;
+	}
+
+
+
+	.divider {
+		width: 1px;
+		height: 100%;
+		background-color: #333;
+	}
+
+	.dropdown-menu {
+		display: none; 
+		position: absolute;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		background-color: white !important; 
+		border: 1px solid #ddd; 
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		border-radius: 5px;
+		width: 200px;
+		top: 100%; 
+	}
+
+	.dropdown-menu.active {
+		display: block;
+		background-color: white !important; 
+	}
+
+	.dropdown-item {
+		padding: 10px 20px;
+		text-decoration: none;
+		color: #333; 
+		display: block;
+		background-color: white; 
+		transition: background-color 0.3s ease;
+	}
+
+	.dropdown-item:hover,
+	.dropdown-item:focus {
+		background-color: #C1E280; 
+		color: #333; 
+	}
+
+	.dropdown-divider {
+		height: 1px;
+		background-color: #ddd;
+		border: none;
+		margin: 8px 0;
+	}
+
+	.dropdown-item-text {
+		margin-top: 10px;
+		font-size: 15px;
+	}
+
+
+	/* ------------------------ СТИЛЬ ДЛЯ ПОДВАЛА ------------------------  */	
+		
+	.footer_container {
+		background-image: url('{% static 'main/images/futer_2.png' %}');
+		width: 100%;
+		height: 293px;
+	}
+		
+	.email-form {
+		position: relative;
+		top: -90px;
+		left: 50%;
+		transform: translateX(-50%);}
+		
+	.button-email {
+		background-color: #c1e280;
+		height: 40px;
+		width: 130px;
+		border-radius: 4px;
+		border-width: 0;
+		cursor: pointer;
+		box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+		box-sizing: border-box;
+		font-family: inherit;
+		text-align: center;
+		transition: 0.4s;}
+		
+	.button-email:hover {
+			box-shadow: 7px 5px 56px -14px #C3D900;
+			transition: 0.4s;
+		}
+		
+		.button-email:active {
+		transform: scale(0.97);
+		box-shadow: 7px 5px 56px -10px #C3D900;
+		transition: 0.4s;}
+		
+	.corner-image {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 1000;}
+		
+	.link-underline {
+		background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+		background-position: 30% 100%;
+		background-repeat: repeat-x;
+		background-size: 3px 3px;
+		color: #000;
+		text-decoration: none;}
+		
+	.link-underline:hover {
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+		background-position: 30% 100%;
+		background-size: auto 4px;
+		background-repeat: repeat-x;
+		width: fit-content;
+		color: #ff9800;}
+		
+	.link-underline {
+		text-decoration: none;
+		transition: color 0.3s ease;}
+		
+	.link-underline:hover,
+	.link-underline:focus,
+	.link-underline:active {
+		color: #ff9800 !important;}
+		
+	.u-section-1 .u-group-1 {
+		width: 705px;
+		min-height: 400px;;
+		margin: 75px auto 0 201px;
+		}
+		
+	.u-section-1 .u-container-layout-1 {
+		padding-top: 20px; 
+		padding: 0;
+		}
+
+		
+	.u-clearfix.u-sheet.u-sheet-1 {
+		height: 580px; 
+		}
+		
+	.u-section-1 .u-text-1 {
+		font-size: 50px;
+		font-weight: 700;
+		margin: 17px 45px 0 9px;
+		margin-bottom: 17px;
+		color: #8dc740;
+		}
+		
+	.u-section-1 .u-text-3 {
+		font-size: 0.875rem;
+		margin: 0 30px 0 10px; 
+		}
+
+	.link-about-us {
+		font-size: 0.875rem;
+		margin: 30px 0 10px;
+		padding-top: 20px; 
+		}
+		
+	.u-section-1 .u-text-4 {
+		position: absolute;
+		font-size: 9px;
+		margin: 42px 0 0 545px; 
+		width: 300px; 
+		}
+
+	.link-about-us{
+		width: 300px;
+		height: 10px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		bottom: -245px;
+		left: 210px;
+		
+	}
+
+	.link-about-us a {
+		font-size: 0.875rem;
+		font-family: "Ysabeau", sans-serif;
+		font-weight: 600;
+		font-size: 17px;
+		text-decoration: none; 
+	}	
+
+	.link-about-us a {
+		background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+		background-position: 30% 100%;
+		background-repeat: repeat-x;
+		background-size: 3px 3px;
+		color: #8dc740;
+		text-decoration: none;
+	}
+
+	.link-about-us:hover a {
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+		background-position: 30% 100%;
+		background-size: auto 4px;
+		background-repeat: repeat-x;
+		width: fit-content;
+		color: #ff9800;
+	}
+
+	.link-about-us a {
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.link-about-us:hover,
+	.link-about-us:focus,
+	.link-about-us:active a {
+		color: #ff9800 !important;
+	}
+
+
+	.corner-image2 {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 1000;
+	}
+
+	/*  ------------- СТИЛЬ СКРОЛЛБАРА ------------- */
+
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+	
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #c1e280;
+	}
+	
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #a7c767;
+	}
+
+	/*  ------------- СТИЛЬ БАННЕРА ------------- */
+
+	.head-banner {
+		background-image: url('{% static 'main/images/banner-chai.png' %}');
+		width: 100%;
+		height: 300px;
+		padding-top: 79px; 
+		overflow: hidden;
+		margin-top: -15px;
+		
+	}
+
+	.chai-container {
+		width: 100%;
+		height: 1500px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+
+	.chai-box {
+		width: 1303px;
+		height: 1500px;
+		position: relative;
+
+	}
+
+	.chai-about {
+		width: 1303px;
+		height: 450px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 290px;
+		left: -10px;
+
+
+	}
+
+	.chai-about1 {
+		width: 300px;
+		height: 450px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 100px;
+
+		border-radius: 10px ;
+		border: 0.1px solid black; 
+	}
+
+	.chai-about1 p{
+		font-size: 10px;
+	}
+
+	.chai-about2 {
+
+		width: 300px;
+		height: 450px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 500px;
+
+		border-radius: 10px ;
+		border: 0.1px solid black; 
+	}
+
+	.chai-about3 {
+		width: 300px;
+		height: 450px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 900px;
+
+		border-radius: 10px ;
+		border: 0.1px solid black; 
+		
+	}
+
+
+	.chai-about1-pic {
+		background-image: url('{% static 'main/images/1matcha.png' %}');
+		width: 297px;
+		height: 200px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 0;
+
+		border-radius: 10px ;
+	}
+
+	.chai-about2-pic {
+		background-image: url('{% static 'main/images/2chai.png' %}');
+		width: 297px;
+		height: 200px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 0;
+
+		border-radius: 10px ;
+	}
+
+	.chai-about3-pic {
+		background-image: url('{% static 'main/images/3chai.png' %}');
+		width: 297px;
+		height: 200px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 0;
+
+		border-radius: 10px ;
+	}
+
+	/* ------------------------------------------------------------------------------------------ */
+
+	.chai-conteiner-text-about {
+		width: 1033px;
+		height: 147px;
+
+		box-sizing: border-box;
+		position: relative; 
+
+		top: 80px;
+	}
+
+	.chai-main-text {
+		width: 787px;
+		height: 80px;
+
+		box-sizing: border-box;
+		position: absolute;
+
+		top: -35px; 
+		left: 40px; /* Привязка к правому краю */
+		z-index: 2;
+
+	}
+
+	.chai-main-text p {
+		font-size: 63px;
+		font-weight: 700;
+		color: #8dc740;
+		white-space: nowrap;
+
+	}
+
+	.chai-text-japan {
+		width: 787px;
+		height: 80px;
+
+		font-family: "Noto Serif JP", serif;
+		font-weight: 100;
+		font-size: 70px;
+
+		box-sizing: border-box;
+		position: absolute;
+
+		top: -50px; 
+		left: 470px; 
+		z-index: 1; 
+	}
+
+
+	.chai-nomain-text {
+		width: 1200px;	
+		height: 70px;
+
+		box-sizing: border-box;
+		position: absolute;
+
+		bottom: 20px; 
+		left: 44px; 
+	}
+
+	/* ------------------------------------------------------------------------------------------ */
+
+	.chai-about1-text {
+
+		width: 285px;
+		height: 230px;
+
+		box-sizing: border-box;
+		position: absolute; 
+		text-align: justify;
+
+		bottom: 0px;
+		left: 5px;
+	}
+
+	.chai-about1-text p {
+		font-size: 15px;
+	}
+		
+	.chai-about1-text h3 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+	}
+
+	.chai-about2-text {
+
+		width: 285px;
+		height: 230px;
+
+		box-sizing: border-box;
+		position: absolute; 
+		text-align: justify;
+
+		bottom: 0px;
+		left: 5px;
+	}
+
+	.chai-about2-text p {
+		font-size: 15px;
+	}
+
+	.chai-about2-text h3 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+	}
+
+	.chai-about3-text {
+
+		width: 285px;
+		height: 230px;
+
+		box-sizing: border-box;
+		position: absolute; 
+		text-align: justify;
+
+		bottom: 0px;
+		left: 5px;
+	}
+
+	.chai-about3-text p {
+		font-size: 15px;
+	}
+
+	.chai-about3-text h3 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+	}
+
+	.chai-mini {
+		width: 1303px;
+		height: 300px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 800px;
+		left: 0px;
+	}
+
+	.chai-mini-pic1 {
+		width: 250px;
+		height: 300px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 30px;
+
+		border-radius: 10px ;
+		border: 1px solid #9b9b9b;
+	}
+
+
+	.chai-mini-pic2 {
+
+		width: 250px;
+		height: 300px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 360px;	
+		border-radius: 10px ;
+		border: 1px solid #9b9b9b;
+	}
+
+	.chai-mini-pic3 {
+		width: 250px;
+		height: 300px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 680px;
+
+		border-radius: 10px ;
+		border: 1px solid #9b9b9b;
+		
+	}
+
+	.chai-mini-pic4 {
+		width: 250px;
+		height: 300px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 1010px;
+
+		border-radius: 10px ;
+		border: 1px solid #9b9b9b;
+		
+	}
+
+	.chai-mini-photo1 {
+		background-image: url('{% static 'main/images/1ch.png' %}');
+		width: 247px;
+		height: 150px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 0px;
+		border-radius: 10px;
+	}
+
+	.chai-mini-photo2 {
+		background-image: url('{% static 'main/images/2ch.png' %}');
+		width: 247px;
+		height: 150px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 0px;
+		border-radius: 10px;
+	}
+
+	.chai-mini-photo3 {
+		background-image: url('{% static 'main/images/3ch.png' %}');
+		width: 247px;
+		height: 150px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 0px; 
+		border-radius: 10px;
+		
+	}
+
+	.chai-mini-photo4 {
+		background-image: url('{% static 'main/images/4cha.png' %}');
+		width: 247px;
+		height: 150px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 0px;
+
+		border-radius: 10px;
+		
+	}
+
+	.chai-mini-text11 {
+		width: 235px;
+		height: 140px;
+
+		box-sizing: border-box;
+		position: absolute; 
+		text-align: justify;
+
+		bottom: 0px;
+		left: 5px;
+
+	}
+
+	.chai-mini-text11 h4 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+		font-size: 20px;
+
+	}
+
+	.chai-mini-text11 p {
+		font-size: 13px;
+
+	}
+
+	.chai-mini-text22 {
+		width: 235px;
+		height: 140px;
+
+		box-sizing: border-box;
+		position: absolute; 
+		text-align: justify;
+
+		bottom: 0px;
+		left: 5px;
+	}
+
+	.chai-mini-text22 h4 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+		font-size: 20px;
+
+	}
+
+	.chai-mini-text22 p {
+		font-size: 13px;
+	}
+
+	.chai-mini-text33 {
+
+
+		width: 235px;
+		height: 140px;
+
+		box-sizing: border-box;
+		position: absolute; 
+		text-align: justify;
+
+		bottom: 0px;
+		left: 5px;
+		
+	}
+
+	.chai-mini-text33 h4 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+		font-size: 20px;
+	}
+
+	.chai-mini-text33 p {
+		font-size: 13px;
+
+	}
+
+	.chai-mini-text44 {
+		width: 235px;
+		height: 140px;
+
+		box-sizing: border-box;
+		position: absolute; 
+		text-align: justify;
+
+		bottom: 0px;
+		left: 5px;
+	}
+
+
+	.chai-mini-text44 p {
+		font-size: 13px;
+
+	}
+
+	.chai-mini-text44 h4 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+		font-size: 20px;
+
+	}
+
+	/* ------------------------------------------------------------------------------------------ */
+
+	.chai-mini2 {
+		width: 1303px;
+		height: 300px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 1150px;
+		left: 0px;
+	}
+
+	.chai-mini-pic5 {
+		width: 250px;
+		height: 300px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 30px;
+
+		border-radius: 10px ;
+		border: 1px solid #9b9b9b;
+	}
+
+
+	.chai-mini-pic6 {
+		width: 250px;
+		height: 300px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 360px;
+
+		border-radius: 10px ;
+		border: 1px solid #9b9b9b;
+
+		
+	}
+
+	.chai-mini-pic7 {
+		width: 250px;
+		height: 300px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 680px;
+
+		border-radius: 10px ;
+		border: 1px solid #9b9b9b;
+
+		
+	}
+
+	.chai-mini-pic8 {
+		width: 250px;
+		height: 300px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 1010px;
+		
+		border-radius: 10px ;
+		border: 1px solid #9b9b9b;
+	}
+
+	.chai-mini-photo5 {
+		background-image: url('{% static 'main/images/5ch.png' %}');
+		width: 247px;
+		height: 150px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 0px;
+		border-radius: 10px;
+
+	}
+
+	.chai-mini-photo6 {
+		background-image: url('{% static 'main/images/6ch.png' %}');
+		width: 247px;
+		height: 150px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 0px;
+		border-radius: 10px;
+	}
+
+	.chai-mini-photo7 {
+		background-image: url('{% static 'main/images/7ch.png' %}');
+		width: 247px;
+		height: 150px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 0px;
+		border-radius: 10px;
+		
+	}
+
+	.chai-mini-photo8 {
+		background-image: url('{% static 'main/images/8ch.png' %}');
+		width: 247px;
+		height: 150px;
+
+		box-sizing: border-box;
+		position: absolute; 
+
+		top: 0px;
+		left: 0px;
+		border-radius: 10px;
+		
+	}
+
+	.chai-mini-text55 {
+		width: 235px;
+		height: 140px;
+
+		box-sizing: border-box;
+		position: absolute; 
+		text-align: justify;
+
+		bottom: 0px;
+		left: 5px;
+		
+
+	}
+
+	.chai-mini-text55 h4 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+		font-size: 20px;
+
+	}
+
+	.chai-mini-text55 h4 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+		font-size: 20px;
+
+	}
+
+	.chai-mini-text55 p {
+		font-size: 13px;
+
+	}
+
+	.chai-mini-text11 p {
+		font-size: 13px;
+
+	}
+
+	.chai-mini-text66 {
+
+		width: 235px;
+		height: 140px;
+
+		box-sizing: border-box;
+		position: absolute; 
+		text-align: justify;
+
+		bottom: 0px;
+		left: 5px;
+		
+	}
+
+	.chai-mini-text66 h4 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+		font-size: 20px;
+
+	}
+
+	.chai-mini-text66 p {
+		font-size: 13px;
+
+	}
+
+	.chai-mini-text77 {
+		width: 235px;
+		height: 140px;
+
+		box-sizing: border-box;
+		position: absolute; 
+		text-align: justify;
+
+		bottom: 0px;
+		left: 5px;
+		
+		
+	}
+
+	.chai-mini-text77 h4 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+		font-size: 20px;
+
+	}
+
+	.chai-mini-text77 p {
+		font-size: 13px;
+
+	}
+
+	.chai-mini-text88 {
+		width: 235px;
+		height: 140px;
+
+		box-sizing: border-box;
+		position: absolute; 
+		text-align: justify;
+		bottom: 0px;
+		left: 5px;
+		
+	}
+
+
+	.chai-mini-text88 h4 {
+		font-family: "Noto Serif JP", serif;
+		font-weight: 300;
+		font-size: 20px;
+
+	}
+
+	.chai-mini-text88 p {
+		font-size: 13px;
+
+	}
+
+	.chai-text-japan p {
+		color: #ebffbe;
+	}
+
+	.menu-item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.menu-avatar {
+		width: 26px;
+		height: 26px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	.menu-avatar-default {
+		width: 26px;
+		height: 26px;
+		border-radius: 50%;
+		background-color: #70a981;
+	}
+
+	.chai-about1, .chai-about2, .chai-about3,
+	.chai-mini-pic1, .chai-mini-pic2, .chai-mini-pic3, .chai-mini-pic4,
+	.chai-mini-pic5, .chai-mini-pic6, .chai-mini-pic7, .chai-mini-pic8 {
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.chai-about1:hover, .chai-about2:hover, .chai-about3:hover,
+	.chai-mini-pic1:hover, .chai-mini-pic2:hover, .chai-mini-pic3:hover, .chai-mini-pic4:hover,
+	.chai-mini-pic5:hover, .chai-mini-pic6:hover, .chai-mini-pic7:hover, .chai-mini-pic8:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+	}
+
+</style>
+</head>
+
+{% comment %} НАВИГАЦИОННОЕ МЕНЮ НАВЕРХУ ЭКРАНА {% endcomment %}
+<div class="navbar">
+    <!-- Секция логотипа -->
+    <div class="logo">
+        <a href="{% url 'home' %}" class="english">KYOTO</a>
+        <div class="logo-divider"></div>
+        <a href="{% url 'home' %}" class="japanese">京都</a>
+    </div>
+
+    <!-- Секция меню -->
+    <div class="menu">
+        <a href="{% url 'about' %}" class="menu-item">О НАШЕМ ЧАЙНОМ ДОМЕ</a>
+        <a href="{% url 'chai' %}" class="menu-item">ЧАЙНАЯ КОЛЛЕКЦИЯ</a>
+        <a href="{% url 'blog' %}" class="menu-item">НАШ БЛОГ</a>
+        <div class="divider"></div>
+
+        <!-- Секция личного кабинета пользователя -->
+        <div class="dropdown">
+            <a href="javascript:void(0);" class="menu-item" onclick="toggleDropdown(event)">
+                ЛИЧНЫЙ КАБИНЕТ
+                {% if request.user.is_authenticated %}
+                    {% if request.user.profile.avatar %}
+                        <img src="{{ request.user.profile.avatar }}" alt="Avatar" class="menu-avatar">
+                    {% else %}
+                        <div class="menu-avatar-default"></div>
+                    {% endif %}
+                {% endif %}
+            </a>
+
+            <ul class="dropdown-menu">
+                {% if request.user.is_authenticated %}
+                    <li><p class="dropdown-item-text">Здравствуйте, {{ request.user.username }}!</p></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{% url 'profile' %}">Мой профиль</a></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">Выйти</a></li>
+                {% else %}
+                    <li><a class="dropdown-item" href="{% url 'register' %}">Зарегистрироваться</a></li>
+                    <li><a class="dropdown-item" href="{% url 'authentication' %}">Войти в личный кабинет</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+{% comment %} БАННЕР {% endcomment %}
+
+<div class="head-banner">
+    <p>``</p>
+</div>
+        
+        
+        
+<div class="chai-container">
+    <div class="chai-box">
+        <div class="chai-conteiner-text-about">
+            <div class="chai-main-text">
+                <p>Наша коллекция чая</p>
+            </div>
+            <div class="chai-text-japan">
+                <p>お茶のコレクション</p>
+            </div>
+            <div class="chai-nomain-text">
+                <p>Наша коллекция, которой мы очень гордимся! Только тщательно отобранные сорта чая высшего сорта прямиком из Киото, сердца японских чайных традиций.<br>В нашем чайном доме можно найти церемониальную матчу <span style="color: #8dc740">(TSURU-NO-MUKASHI, SHIHO, KOUN-NO-MUKASHI, GINSEN-NO-SHIRO, ETENRAKU, UJI-NO-SHIRO, MIYABI, TSUKI, SHIRO, KEITO, AKANE)</span> и листовой зеленый чай <span style="color: #8dc740">(HOJICHA, UJI KARIGANE MOEGI, WAKOCHA, SENCHA, SENCHA IRODORI, UJI FUKAMUSHICHA SHIN, UJI GYOKURO, UJI DAIFUKU, GENMAICHA)</span>.</p>
+            </div>
+        </div>
+
+        <div class="chai-about">
+            <div class="chai-about1">
+                <div class="chai-about1-pic"><p>``</p></div>
+                <div class="chai-about1-text">
+                    <h3>Матча / Matcha</h3>
+                    <p>Приготовленная с использованием каменной мельницы для измельчения листьев в мелкий порошок, матча отличается натуральным ярко-зеленым цветом, уникальным ароматом и мягким, насыщенным вкусом.</p>
+                </div>
+            </div>
+
+            <div class="chai-about2">
+                <div class="chai-about2-pic"><p>``</p></div>
+                <div class="chai-about2-text">
+                    <h3>Гёкуро | Gyokuro</h3>
+                    <p>Гекуро обладает характерным ароматом и сладостью, а также успокаивающим вкусом умами, который остается с вами надолго, позволяя наслаждаться им медленно. Его лучше всего готовить медленно, расслабляясь.</p>
+                </div>
+            </div>
+
+            <div class="chai-about3">
+                <div class="chai-about3-pic"><p>``</p></div>
+                <div class="chai-about3-text">
+                    <h3>Сенча | Sencha</h3>
+                    <p>Сенча обладает уникальной гармонией горечи и сладости, а также приятным, освежающим сладким послевкусием. Знаменитый японский зеленый чай, которым можно наслаждаться по любому поводу.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chai-mini">
+            <div class="chai-mini-pic1">
+                <div class="chai-mini-photo1"><p>``</p></div>
+                <div class="chai-mini-text11">
+                    <h4>Very Berry Matcha</h4>
+                    <p>Не откажите себе в фруктовом эксперименте с нашим ягодным чаем матча. Изысканный, инновационный вкус матча придется по вкусу даже самым традиционным поклонникам.</p>
+                </div>
+            </div>
+
+            <div class="chai-mini-pic2">
+                <div class="chai-mini-photo2"><p>``</p></div>
+                <div class="chai-mini-text22">
+                    <h4>Matcha iri Genmaicha</h4>
+                    <p>Листья банча ("ча") и коричневый рис ("генмай"), из которых состоит Генмайча, посыпаны порошком зеленого чая матча, и результат получается фантастическим!</p>
+                </div>
+            </div>
+
+            <div class="chai-mini-pic3">
+                <div class="chai-mini-photo3"><p>``</p></div>
+                <div class="chai-mini-text33">
+                    <h4>Yanagi Premium Green</h4>
+                    <p>Янаги является ценной альтернаитой некоторым более дорогим сортам зеленого чая, чтобы вы могли чаще наслаждаться вкусом сенчи!</p>
+                </div>
+            </div>
+
+            <div class="chai-mini-pic4">
+                <div class="chai-mini-photo4"><p>``</p></div>
+                <div class="chai-mini-text44">
+                    <h4>Genmaicha</h4>
+                    <p>Генмайча - это другой вид японского зеленого чая, который многим нравится. Генмайча обладает неповторимым внешним видом и приятным обжаренным вкусом.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chai-mini2">
+            <div class="chai-mini-pic5">
+                <div class="chai-mini-photo5"><p>``</p></div>
+                <div class="chai-mini-text55">
+                    <h4>Bi Lo Chun</h4>
+                    <p>Би Ло Чун, зеленый чай из Цзянсу, обладает ярко выраженным аромата цветочного поля с цитрусовыми нотками.</p>
+                </div>
+            </div>
+
+            <div class="chai-mini-pic6">
+                <div class="chai-mini-photo6"><p>``</p></div>
+                <div class="chai-mini-text66">
+                    <h4>Yutaka Midori</h4>
+                    <p>Это смесь легкой и густой сенчи, приготовленной на пару из сорта Ютака Мидори. "Ютака Мидори" переводится как "интенсивно зеленый", точно описывает этот чай.</p>
+                </div>
+            </div>
+
+            <div class="chai-mini-pic7">
+                <div class="chai-mini-photo7"><p>``</p></div>
+                <div class="chai-mini-text77">
+                    <h4>Jeju Sejak</h4>
+                    <p>У этого чая красивые вьющиеся листья, ароматный букет и гладкий вкус. Мы гордимся тем, что предлагаем вам этот сорт чая.</p>
+                </div>
+            </div>
+
+            <div class="chai-mini-pic8">
+                <div class="chai-mini-photo8"><p>``</p></div>
+                <div class="chai-mini-text88">
+                    <h4>Taiping Houkui</h4>
+                    <p>Этой весной мы посетили деревню на берегу озера, где готовят этот особенный чай. Было приятно наблюдать, как хозяйки вручную заваривают крупные листья.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% comment %} -------------------- СЕКЦИЯ ПОДВАЛА ------------------------{% endcomment %}
+
+
+<div class="footer_container" style="position: relative;">
+	<!-- Тигрики -->
+		<img src="{% static 'main/images/tigr.png' %}" alt="Декоративный тигр слева" class="corner-image">
+		<img src="{% static 'main/images/tigr2.png' %}" alt="Декоративный тигр справа" class="corner-image2">
+		
+		<div class="row">
+	<!-- Первая секция подвала -->
+			<div class="col-6 col-md-2 mb-3" style="position: relative; left: 400px; top: 50px; font-family:Ysabeau, sans-serif;">
+				<h5>Чайный дом 'Встреча в Киото'</h5>
+				<ul class="nav flex-column">
+					<li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-0 text-body-secondary link-underline">• О нашем чайном доме</a></li>
+					<li class="nav-item mb-2"><a href="{% url 'chai' %}" class="nav-link p-0 text-body-secondary link-underline">• Наша чайная коллекция</a></li>
+				</ul>
+			</div>
+	
+	<!-- Вторая секция подвала -->
+			<div class="col-6 col-md-2 mb-3" style="position: relative; left: 500px; top: 50px; font-family:Ysabeau, sans-serif;">
+				<ul class="nav flex-column">
+					<li class="nav-item mb-2"><a href="{% url 'blog' %}" class="nav-link p-0 text-body-secondary link-underline">• Блог</a></li>
+					<li class="nav-item mb-2"><a href="https://go.2gis.com/22cb1" target="_blank" class="nav-link p-0 text-body-secondary link-underline">• Найти нас на карте</a></li>
+					<li class="nav-item mb-2">
+						<a href="{% if user.is_authenticated %}{% url 'profile' %}{% else %}{% url 'authentication' %}{% endif %}" class="nav-link p-0 text-body-secondary link-underline">
+							• Личный кабинет
+						</a>
+					</li>
+				</ul>
+			</div>
+	
+	<!-- Кнопка блога -->
+			<div class="email-form" style="position: relative; left: 2300px; top: -65px; font-family:Ysabeau, sans-serif;">
+				<h5>Переходите в наш новостной блог!</h5>
+				<p>Читайте интересные статьи и общайтесь с другими людьми! ♡</p>
+				<div class="d-flex flex-column flex-sm-row w-100 gap-2">
+					<a href="{% url 'blog' %}" class="button-email" style="text-decoration: none; text-align: center; padding-top: 8px; color: black">Перейти в блог</a>
+				</div>
+			</div>
+	
+			<!-- Копирайт текст -->
+			<div class="text-under-footer" style="color: #c9c9c9; position: absolute; left: 380px; bottom: 25px; font-family: Ysabeau, sans-serif;">
+				<p>© 'Наша случайная встреча в Киото' 2024. Все права на материалы принадлежат их владельцам. Не является настоящим сайтом и представляет собой только дипломный проект Е.Н для Академии ТОП.<br>Передаю привет всем, кто зайдет на этот сайт посмотреть и потыкаться.</p>
+			</div>
+		</div>
+	</div>
+	
+	
+    
+
+<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const personalMenuItem = document.querySelector('.dropdown a');
+			
+			personalMenuItem.addEventListener('click', function(event) {
+				event.preventDefault();
+				event.stopPropagation();
+				const dropdownMenu = this.nextElementSibling;
+				dropdownMenu.classList.toggle('active');
+			});
+		
+			document.addEventListener('click', function(event) {
+				if (!event.target.closest('.dropdown')) {
+					document.querySelectorAll('.dropdown-menu').forEach(menu => {
+						menu.classList.remove('active');
+					});
+				}
+			});
+		});
+</script>
+
+<script src="{% static 'main/js/script.js' %}"></script>
+</body>
+</html>
